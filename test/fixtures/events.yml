@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  location: MyString
+  start_time: 2019-06-06 08:54:02
+  confirmed: false
+
+two:
+  type: 
+  location: MyString
+  start_time: 2019-06-06 08:54:02
+  confirmed: false
