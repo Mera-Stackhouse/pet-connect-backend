@@ -23,14 +23,14 @@ ActiveRecord::Schema.define(version: 2019_06_12_150435) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "events_pets", id: false, force: :cascade do |t|
-    t.bigint "pet_id", null: false
-    t.bigint "event_id", null: false
+  create_table "events_pets", force: :cascade do |t|
+    t.integer "pet_id", null: false
+    t.integer "event_id", null: false
   end
 
-  create_table "events_users", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "event_id", null: false
+  create_table "events_users", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "event_id", null: false
   end
 
   create_table "pets", force: :cascade do |t|
@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(version: 2019_06_12_150435) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "pets_users", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "pet_id", null: false
+  create_table "pets_users", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "pet_id", null: false
   end
 
   create_table "user_relationships", force: :cascade do |t|

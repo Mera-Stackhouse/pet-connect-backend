@@ -12,8 +12,14 @@ require 'faker'
 # User.destroy_all
 # Pet.destroy_all
 # Event.destroy_all
+#
+# PetsUser.destroy_all
+# EventsUser.destroy_all
+# EventsPet.destroy_all
 
 Faker::Config.locale = 'en-US'
+
+
 
 # bios = [
 #   "Dog walker and pet sitter",
@@ -74,55 +80,59 @@ Faker::Config.locale = 'en-US'
 #   )
 # end
 
-
-# PetsUser.create(user_id: 21, pet_id: 6)
-# PetsUser.create(user_id: 22, pet_id: 6)
-# PetsUser.create(user_id: 23, pet_id: 7)
-#   PetsUser.create(user_id: 23, pet_id: 8)
-# PetsUser.create(user_id: 24, pet_id: 9)
-#   PetsUser.create(user_id: 24, pet_id: 10)
-#   PetsUser.create(user_id: 24, pet_id: 11)
-#   PetsUser.create(user_id: 24, pet_id: 12)
-# PetsUser.create(user_id: 25, pet_id: 12)
-#   PetsUser.create(user_id: 25, pet_id: 13)
+#
+# PetsUser.create(user_id: 3, pet_id: 3)
+# PetsUser.create(user_id: 2, pet_id: 3)
+# PetsUser.create(user_id: 4, pet_id: 4)
+#   PetsUser.create(user_id: 4, pet_id: 5)
+# PetsUser.create(user_id: 5, pet_id: 6)
+#   PetsUser.create(user_id: 5, pet_id: 7)
+#   PetsUser.create(user_id: 6, pet_id: 8)
+#   PetsUser.create(user_id: 7, pet_id: 9)
+# PetsUser.create(user_id: 6, pet_id: 10)
+#   PetsUser.create(user_id: 7, pet_id: 10)
 #
 #
-# EventsUser.create(user_id: 21, event_id: 1)
-#   EventsUser.create(user_id: 23, event_id: 1)
-# EventsUser.create(user_id: 24, event_id: 2)
-#   EventsUser.create(user_id: 25, event_id: 2)
-# EventsUser.create(user_id: 22, event_id: 3)
-#   EventsUser.create(user_id: 24, event_id: 3)
-# EventsUser.create(user_id: 21, event_id: 4)
-#   EventsUser.create(user_id: 24, event_id: 4)
-# EventsUser.create(user_id: 21, event_id: 5)
-#   EventsUser.create(user_id: 25, event_id: 5)
-# EventsUser.create(user_id: 22, event_id: 6)
-#   EventsUser.create(user_id: 24, event_id: 6)
-# EventsUser.create(user_id: 23, event_id: 6)
-#   EventsUser.create(user_id: 24, event_id: 6)
-# EventsUser.create(user_id: 25, event_id: 6)
-#   EventsUser.create(user_id: 24, event_id: 6)
+# EventsUser.create(user_id: 3, event_id: 1)
+#   EventsUser.create(user_id: 5, event_id: 1)
+# EventsUser.create(user_id: 4, event_id: 2)
+#   EventsUser.create(user_id: 6, event_id: 2)
+# EventsUser.create(user_id: 4, event_id: 3)
+#   EventsUser.create(user_id: 5, event_id: 3)
+# EventsUser.create(user_id: 3, event_id: 4)
+#   EventsUser.create(user_id: 6, event_id: 4)
+# EventsUser.create(user_id: 2, event_id: 5)
+#   EventsUser.create(user_id: 7, event_id: 5)
+# EventsUser.create(user_id: 3, event_id: 6)
+#   EventsUser.create(user_id: 4, event_id: 6)
+#   EventsUser.create(user_id: 6, event_id: 6)
+#   EventsUser.create(user_id: 7, event_id: 6)
 #
 #
 #
-# EventsPet.create(pet_id: 6, event_id: 1)
-#   EventsPet.create(pet_id: 8, event_id: 1)
-# EventsPet.create(pet_id: 11, event_id: 2)
-#   EventsPet.create(pet_id: 13, event_id: 2)
-# EventsPet.create(pet_id: 6, event_id: 3)
-#   EventsPet.create(pet_id: 9, event_id: 3)
-# EventsPet.create(pet_id: 6, event_id: 4)
-#   EventsPet.create(pet_id: 10, event_id: 4)
-#   EventsPet.create(pet_id: 11, event_id: 4)
-# EventsPet.create(pet_id: 6, event_id: 5)
-#   EventsPet.create(pet_id: 12, event_id: 5)
-# EventsPet.create(pet_id: 13, event_id: 6)
+# EventsPet.create(pet_id: 3, event_id: 1)
+#   EventsPet.create(pet_id: 6, event_id: 1)
+# EventsPet.create(pet_id: 8, event_id: 2)
+#   EventsPet.create(pet_id: 5, event_id: 2)
+# EventsPet.create(pet_id: 4, event_id: 3)
+#   EventsPet.create(pet_id: 7, event_id: 3)
+#   EventsPet.create(pet_id: 6, event_id: 3)
+# EventsPet.create(pet_id: 3, event_id: 4)
+#   EventsPet.create(pet_id: 8, event_id: 4)
+#
+# EventsPet.create(pet_id: 3, event_id: 5)
+#   EventsPet.create(pet_id: 9, event_id: 5)
+#   EventsPet.create(pet_id: 10, event_id: 5)
+# EventsPet.create(pet_id: 3, event_id: 6)
+#   EventsPet.create(pet_id: 4, event_id: 6)
+#   EventsPet.create(pet_id: 8, event_id: 6)
 #   EventsPet.create(pet_id: 9, event_id: 6)
-#   EventsPet.create(pet_id: 11, event_id: 6)
 
+# UserRelationship.create(followed_id: 3, follower_id: 4)
+# UserRelationship.create(followed_id: 4, follower_id: 3)
+#
 # Events 1 - 10
 #
-# Pets 6 - 13
+# Pets 3 - 10
 #
-# User 21 - 25
+# User 3 - 7
