@@ -1,3 +1,34 @@
+TO DO:
+
+- Go through schema
+    - see if there should be any other defaulted values
+    - Add confirmed for events, etc…
+- Config/initializers/ and change up the cors website once deployed
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # README
 
 This README would normally document whatever steps are necessary to get the

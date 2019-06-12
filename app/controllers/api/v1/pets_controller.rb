@@ -1,6 +1,10 @@
 class Api::V1::PetsController < ApplicationController
   before_action :get_pet, accept: :create
 
+  def profile
+    render json: { user: UserSerializer.new(current_user) }, status: :accepted
+  end
+
   def create
     @pet = Pet.create(pet_params)
     if @pet.valid?
