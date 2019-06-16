@@ -1,5 +1,10 @@
 class Api::V1::PetsController < ApplicationController
-  before_action :get_pet, accept: :create
+  # before_action :get_pet, accept: [:create, :index]
+
+  def index
+    pets = Pet.all
+    render json: pets
+  end
 
   def profile
     render json: { user: UserSerializer.new(current_user) }, status: :accepted

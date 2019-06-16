@@ -1,5 +1,13 @@
 class Api::V1::UsersController < ApplicationController
 
+  def index
+    users = User.all
+    names = users.collect{|u|
+      u.name
+    }
+    render json: users
+  end
+
   def show
     set_user
     @token = request.headers['token']
