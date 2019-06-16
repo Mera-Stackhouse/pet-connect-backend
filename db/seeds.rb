@@ -128,8 +128,8 @@ Faker::Config.locale = 'en-US'
 #   EventsPet.create(pet_id: 8, event_id: 6)
 #   EventsPet.create(pet_id: 9, event_id: 6)
 
-# UserRelationship.create(followed_id: 3, follower_id: 4)
-# UserRelationship.create(followed_id: 4, follower_id: 3)
+# UserRelationship.create(followed_id: 6, follower_id: 4)
+# UserRelationship.create(followed_id: 4, follower_id: 6)
 #
 # Events 1 - 10
 #
