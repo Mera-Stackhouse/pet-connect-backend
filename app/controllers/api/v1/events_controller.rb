@@ -6,21 +6,16 @@ class Api::V1::EventsController < ApplicationController
   end
 
   def create
-    event = Event.new(event_params)
-    params["event"]["users"].each{|u|
-      EventsUser.new(event: event, user_id: u.id)
+    event = Event.create(event_params)
+    users = params[:event][:users]
+    pets = params[:event][:pets]
+    users.each{|u|
+      EventsUser.create(event: event, user_id: u[:id])
     }
-    params["event"]["pets"].each{|p|
-      EventsPet.new(event: event, pet_id: p.id)
+    pets.each{|p|
+      EventsPet.create(event: event, pet_id: p[:id])
     }
-    debugger
-
-    # @event = Event.create(event_params)
-    #
-    # params.event.users.each{|u|
-    #   EventsUser.create(event: @event, user_id: u.id)
-    # }
-    # render json: @event, status: :accepted
+    render json: event, status: :accepted
   end
 
   def update
@@ -41,7 +36,7 @@ class Api::V1::EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:location, :start_time, :event_type, :users, :pets)
+    params.require(:event).permit(:location, :start_time, :event_type)
   end
 
 end

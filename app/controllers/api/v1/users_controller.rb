@@ -23,10 +23,13 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-  def create
-  end
-
   def update
+    set_user
+    if @user.update(user_params)
+      render json: @user, status: :accepted
+    else
+      render json: { error: 'failed to update user' }, status: :not_acceptable
+    end
   end
 
   def destroy
@@ -40,7 +43,7 @@ class Api::V1::UsersController < ApplicationController
 
 
   def user_params
-    params.require(:user).permit(:email)
+    params.require(:user).permit(:email, :neighborhood, :name, :img_url, :bio, :phone)
   end
 
   def get_email
