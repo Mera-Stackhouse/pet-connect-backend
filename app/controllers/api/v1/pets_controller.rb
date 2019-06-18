@@ -13,19 +13,20 @@ class Api::V1::PetsController < ApplicationController
   def create
     @pet = Pet.create(pet_params)
     if @pet.valid?
-      PetsUser.create(user: @user , pet: @pet)
-      render json: @user, status: :created
+      PetsUser.create(user_id: params[:pet][:userId], pet: @pet)
+      render json: @pet, status: :created
     else
       render json: { error: 'failed to create pet' }, status: :not_acceptable
     end
   end
 
   def update
-    if @pet.update(pet_params)
-      render json:  {pet: @pet}, status: :accepted
-    else
-      render json: { error: 'failed to update pet' }, status: :not_acceptable
-    end
+    get_pet
+    @pet.update(pet_params)
+    render json: @pet, status: :accepted
+    # else
+    #   render json: { error: 'failed to update pet' }, status: :not_acceptable
+    # end
   end
 
   def destroy
