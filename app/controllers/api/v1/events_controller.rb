@@ -21,6 +21,18 @@ class Api::V1::EventsController < ApplicationController
   def update
     set_event
     @event.update(event_params)
+
+    EventsUser.where(event_id: @event.id).delete_all
+    EventsPet.where(event_id: @event.id).delete_all
+
+    users = params[:event][:users]
+    pets = params[:event][:pets]
+    users.each{|u|
+      EventsUser.create(event: @event, user_id: u[:id])
+    }
+    pets.each{|p|
+      EventsPet.create(event: @event, pet_id: p[:id])
+    }
     render json: @event, status: :accepted
   end
 

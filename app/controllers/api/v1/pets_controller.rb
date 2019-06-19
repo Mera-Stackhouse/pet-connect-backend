@@ -30,6 +30,7 @@ class Api::V1::PetsController < ApplicationController
   end
 
   def destroy
+    get_pet
     @pet.destroy
     render json: @user, status: :accepted
   end
