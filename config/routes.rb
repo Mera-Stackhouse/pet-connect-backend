@@ -6,9 +6,10 @@ Rails.application.routes.draw do
       resources :users, only: [:show, :create, :update, :index]
       # get '/profile/:id', to: 'users#profile'
 
-
+      get 'users/friends/:id', to: 'users#friends'
 
     end
   end
   post '/login', to: 'application#login'
+  # get 'users/friends/:id', to: 'users#friends'
 end
