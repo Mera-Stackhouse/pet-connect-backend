@@ -2,15 +2,12 @@ class Api::V1::UserRelationshipsController < ApplicationController
 
   def create
     get_ids
-    relationship = UserRelationship.create(follower_id: @follower.id, followed_id: @followed.id, confirmed: true)
-    # Change this to false for friend requests
+    relationship = UserRelationship.create(follower_id: @follower.id, followed_id: @followed.id)
     render json: relationship, status: :accepted
   end
 
   def update
-    get_ids
-    relationship_id = UserRelationship.where(follower_id: @follower.id, followed_id: @followed.id).pluck(:id)
-    relationship = UserRelationship.find(relationship_id)
+    relationship = UserRelationship.find(params[:id])
     relationship.update(confirmed: true)
     render json: relationship, status: :accepted
   end
