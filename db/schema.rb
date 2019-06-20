@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2019_06_12_150435) do
   create_table "user_relationships", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
+    t.boolean "confirmed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
