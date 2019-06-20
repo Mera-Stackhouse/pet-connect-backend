@@ -32,6 +32,14 @@ class Api::V1::UsersController < ApplicationController
   def destroy
   end
 
+  def friends
+    set_user
+    friends = UserRelationship.where(follower_id: @user.id, confirmed: true).pluck(:followed_id)
+    more_friends = UserRelationship.where(followed_id: @user.id, confirmed: true).pluck(:follower_id)
+    all_friends = friends + more_friends
+    render json: all_friends, status: :accepted
+  end
+
   private
 
   def set_user
