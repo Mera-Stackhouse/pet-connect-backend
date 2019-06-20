@@ -16,11 +16,10 @@ class Api::V1::UserRelationshipsController < ApplicationController
   end
 
   def destroy
-    get_ids
-    relationship_id = UserRelationship.where(follower_id: @follower.id, followed_id: @followed.id).pluck(:id)
-    relationship = UserRelationship.find(relationship_id)
+    relationship = UserRelationship.find(params[:id])
+    copy = relationship
     relationship.destroy
-    render json: {message: 'deleted'}, status: :accepted
+    render json: relationship, status: :accepted
   end
 
   private

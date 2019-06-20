@@ -34,9 +34,10 @@ class Api::V1::UsersController < ApplicationController
 
   def friends
     set_user
-    friends = UserRelationship.where(follower_id: @user.id, confirmed: true).pluck(:followed_id)
-    more_friends = UserRelationship.where(followed_id: @user.id, confirmed: true).pluck(:follower_id)
+    friends = UserRelationship.where(follower_id: @user.id, confirmed: true).pluck(:id, :followed_id)
+    more_friends = UserRelationship.where(followed_id: @user.id, confirmed: true).pluck(:id, :follower_id)
     all_friends = friends + more_friends
+    # you could pluck off the : id as well, but then we can't use .includes in the front end
     render json: all_friends, status: :accepted
   end
 

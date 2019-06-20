@@ -7,7 +7,8 @@ Rails.application.routes.draw do
       resources :user_relationships, only: [ :create, :update, :destroy]
       # get '/profile/:id', to: 'users#profile'
 
-      get 'users/friends/:id', to: 'users#friends'
+      get '/users/friends/:id', to: 'users#friends'
+      # delete '/relationships/', to: 'user_relationships#destroy'
 
     end
   end
