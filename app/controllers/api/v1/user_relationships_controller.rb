@@ -1,4 +1,4 @@
-class UserRelationshipsController < ApplicationController
+class Api::V1::UserRelationshipsController < ApplicationController
 
   def create
     get_ids
@@ -7,7 +7,7 @@ class UserRelationshipsController < ApplicationController
   end
 
   def update
-    get_ids
+    # get_ids
     relationship_id = UserRelationship.where(follower_id: @follower.id, followed_id: @followed.id).pluck(:id)
     relationship = UserRelationship.find(relationship_id)
     relationship.update(confirmed: true)
@@ -15,7 +15,7 @@ class UserRelationshipsController < ApplicationController
   end
 
   def destroy
-    get_ids
+    # get_ids
     relationship_id = UserRelationship.where(follower_id: @follower.id, followed_id: @followed.id).pluck(:id)
     relationship = UserRelationship.find(relationship_id)
     relationship.destroy
@@ -25,8 +25,12 @@ class UserRelationshipsController < ApplicationController
   private
 
   def get_ids
-    @follower = User.find(params[:follower_id]]
-    @followed = User.find(params[:follower_id]]
+    @follower = User.find(params[:follower_id])
+    @followed = User.find(params[:followed_id])
   end
+
+  # def relationship_params
+  #   params.require[:user_relationship].permit[:followed_id, :follower_id]
+  # end
 
 end
