@@ -2,12 +2,13 @@ class Api::V1::UserRelationshipsController < ApplicationController
 
   def create
     get_ids
-    relationship = UserRelationship.create(follower_id: @follower.id, followed_id: @followed.id)
+    relationship = UserRelationship.create(follower_id: @follower.id, followed_id: @followed.id, confirmed: true)
+    # Change this to false for friend requests
     render json: relationship, status: :accepted
   end
 
   def update
-    # get_ids
+    get_ids
     relationship_id = UserRelationship.where(follower_id: @follower.id, followed_id: @followed.id).pluck(:id)
     relationship = UserRelationship.find(relationship_id)
     relationship.update(confirmed: true)
@@ -15,7 +16,7 @@ class Api::V1::UserRelationshipsController < ApplicationController
   end
 
   def destroy
-    # get_ids
+    get_ids
     relationship_id = UserRelationship.where(follower_id: @follower.id, followed_id: @followed.id).pluck(:id)
     relationship = UserRelationship.find(relationship_id)
     relationship.destroy
@@ -30,7 +31,7 @@ class Api::V1::UserRelationshipsController < ApplicationController
   end
 
   # def relationship_params
-  #   params.require[:user_relationship].permit[:followed_id, :follower_id]
+    # params.require[:user_relationship].permit[:followed_id, :follower_id]
   # end
 
 end
