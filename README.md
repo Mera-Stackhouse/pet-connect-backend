@@ -1,55 +1,58 @@
-TO DO:
+# PetConnect
 
-- Go through schema
-    - see if there should be any other defaulted values
-    - Add confirmed for events, etc…
-- Config/initializers/ and change up the cors website once deployed
-- 
+Rails API backend of PetConnect, a social media app to connect with other pet owners and plan pet play dates!
+(Add Gif here)
 
+## Demo and Live Site
 
+* [Vimeo demo]()
 
-
-
+* Go to [add link]() and use a Google account to sign in. You will automatically have a few friends seeded. You can add your pets, edit your profile, and create events with your friends.
 
 
+## Installation
+* If you would like to use this repo locally, please download the frontend, which you can find [here](https://github.com/Mera-Stackhouse/pet-connect-frontend)
+* Download [PostgreSQL](https://www.postgresql.org/) database
+* Clone down this repo
+* From the main folder in the terminal, run ```bundle install```
+* Database creation
+  * ```rails db:create```
+  * ```rails db:migrate```
+* Database initialization
+  * A seed file is included with faker generated data
+  * There are examples of how to create users, events, pets, relationships between all of them.
+  * You must create users, events, and pets first.
+  * Then comment out user and pet creation lines and use the user, pet, and event id's to make relationships between them.
+* Start the server with ```rails s```
+* Make sure your frontend refers to the correct port for fetching.
+
+## Features of PetConnect
+* Log in with your Google account using OAuth. If you have never logged in before, a new PetConnect account will be created for you.
+* View and edit your profile.
+* Add, edit, and remove your pets.
+* Set up events with your fellow pet owners, including choosing the participating pets and the location.
+
+## Technologies
+* Google id token gem
+
+## Credits
+
+* Thank you to the following Stack Overflows and docs for helping me out:
+  * https://blog.logrocket.com/advanced-react-router-concepts-code-splitting-animated-transitions-scroll-restoration-recursive-17096c0cf9db/
+  * https://auth0.com/blog/react-router-4-practical-tutorial/
+  * https://github.com/google/google-id-token
+  * https://www.engineyard.com/blog/active-model-serializers
+
+
+## License
+
+* Under the [MIT License](docs/LICENSE.md)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
 
 * Database creation
 
 * Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
 * Deployment instructions
-
-* ...

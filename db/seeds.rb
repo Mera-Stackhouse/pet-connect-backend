@@ -21,38 +21,38 @@ Faker::Config.locale = 'en-US'
 
 
 
-# bios = [
-#   "Dog walker and pet sitter",
-#   "Looking for pet play dates for my pups",
-#   "Pet sitter",
-#   "New pet parent",
-#   "Dog walker"
-# ]
-#
-# breeds = [
-#   "German Shepherd",
-#   "Golden Retriever",
-#   "French Bulldog",
-#   "Beagle",
-#   "Poodle",
-#   "Rottweilers",
-#   "Yorkshire Terrier",
-#   "Siberian Huskie",
-#   "Dachshund",
-#   "Sphynx",
-#   "Scottish Fold",
-#   "American Shorthair",
-#   "Maine Coon",
-#   "Persian",
-#   "Ragdoll"
-# ]
-#
-# event_types = [
-#   'Walk',
-#   'Pet Sitting',
-#   'Pet Date'
-# ]
-#
+bios = [
+  "Dog walker and pet sitter",
+  "Looking for pet play dates for my pups",
+  "Pet sitter",
+  "New pet parent",
+  "Dog walker"
+]
+
+breeds = [
+  "German Shepherd",
+  "Golden Retriever",
+  "French Bulldog",
+  "Beagle",
+  "Poodle",
+  "Rottweilers",
+  "Yorkshire Terrier",
+  "Siberian Huskie",
+  "Dachshund",
+  "Sphynx",
+  "Scottish Fold",
+  "American Shorthair",
+  "Maine Coon",
+  "Persian",
+  "Ragdoll"
+]
+
+event_types = [
+  'Walk',
+  'Pet Sitting',
+  'Pet Date'
+]
+
 # 5.times do
 #   User.create(
 #     name: Faker::Name.unique.name,
@@ -135,4 +135,4 @@ Faker::Config.locale = 'en-US'
 #
 # Pets 3 - 10
 #
-# User 3 - 7
+# User 3 - 7 9 - 14
