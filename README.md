@@ -1,7 +1,6 @@
 # PetConnect
 
 Rails API backend of PetConnect, a social media app to connect with other pet owners and plan pet play dates!
-(Add Gif here)
 
 ## Demo
 ![Pet Connect Screenshot](public/pet_connect_screenshot.png)
