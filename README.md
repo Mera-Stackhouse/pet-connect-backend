@@ -4,7 +4,7 @@ Rails API backend of PetConnect, a social media app to connect with other pet ow
 (Add Gif here)
 
 ## Demo and Live Site
-
+![Pet Connect Screenshot]()
 * [Vimeo demo]()
 
 * Go to [add link]() and use a Google account to sign in. You will automatically have a few friends seeded. You can add your pets, edit your profile, and create events with your friends.
