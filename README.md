@@ -45,12 +45,3 @@ Rails API backend of PetConnect, a social media app to connect with other pet ow
 ## License
 
 * Under the [MIT License](docs/LICENSE.md)
-
-
-
-
-* Database creation
-
-* Database initialization
-
-* Deployment instructions
