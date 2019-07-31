@@ -39,6 +39,7 @@ Rails API backend of PetConnect, a social media app to connect with other pet ow
   * https://auth0.com/blog/react-router-4-practical-tutorial/
   * https://github.com/google/google-id-token
   * https://www.engineyard.com/blog/active-model-serializers
+  * http://billpatrianakos.me/blog/2013/10/13/list-of-rails-status-code-symbols/
 
 
 ## License

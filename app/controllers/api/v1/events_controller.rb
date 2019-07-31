@@ -39,6 +39,7 @@ class Api::V1::EventsController < ApplicationController
   def destroy
     set_event
     @event.destroy
+    render json: {}, status: :no_content
   end
 
   private
